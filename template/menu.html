@@ -58,7 +58,7 @@
 			{{/forms.pages.admin_log.adminlog}}
 			{{/plugin_display}}
 
-			<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}'>Home</a></li>
+			<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}'>Accueil</a></li>
 			{{#user}}
 				{{#jams.current_jam}}
 					{{^cookies.is_streamer}}
@@ -68,65 +68,74 @@
 						</a></b></li>
 					{{/cookies.is_streamer}}
 				{{/jams.current_jam}}
-				<li><b><a href='?{{{forms.get.page}}}={{{forms.pages.themes}}}'>Vote for {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}</a></b></li>
+				<li><b><a href='?{{{forms.get.page}}}={{{forms.pages.themes}}}'>Vote pour {{CONFIG.VALUES
+          .THEME_PHRASE_PLURAL}}</a></b></li>
 			{{/user}}
 			{{^user}}
-				<li><a href='?{{{forms.get.page}}}={{{forms.pages.login}}}'>Log in</a> or <a href='?{{{forms.get.page}}}={{{forms.pages.register}}}'>register</a></li>
+				<li><a href='?{{{forms.get.page}}}={{{forms.pages.login}}}'>Connexion</a> ou <a
+            href='?{{{forms.get.page}}}={{{forms.pages.register}}}'>enregistrement</a></li>
 			{{/user}}
-				<li><a href='?{{{forms.get.page}}}={{{forms.pages.rules}}}'>How it works</a></li>
+				<li><a href='?{{{forms.get.page}}}={{{forms.pages.rules}}}'>Comment ça marche</a></li>
 				<li><a href='?{{{forms.get.page}}}={{{forms.pages.assets}}}'>Assets</a></li>
-				<li><a href='?{{{forms.get.page}}}={{{forms.pages.privacy}}}'>Privacy</a></li>
+				<li><a href='?{{{forms.get.page}}}={{{forms.pages.privacy}}}'>Vie privée</a></li>
 			{{#user}}
 				{{^cookies.is_streamer}}
-					<li><a href='?{{{forms.get.page}}}={{{forms.pages.userdata}}}'>User data</a></li>
+					<li><a href='?{{{forms.get.page}}}={{{forms.pages.userdata}}}'>Données utilisateur</a></li>
 				{{/cookies.is_streamer}}
 			{{/user}}
 
-			<li class="mainmenu-separator">Browse</li>
+			<li class="mainmenu-separator">Parcourir</li>
 			<li><a href='?{{{forms.get.page}}}={{{forms.pages.entries}}}'>{{CONFIG.VALUES.GAME_PHRASE_PLURAL}}</a></li>
 			<li><a href='?{{{forms.get.page}}}={{{forms.pages.authors}}}'>{{CONFIG.VALUES.DEVELOPER_PHRASE_PLURAL}}</a></li>
 			<li><a href='?{{{forms.get.page}}}={{{forms.pages.jams}}}'>{{CONFIG.VALUES.JAM_PHRASE_PLURAL}}</a></li>
 
 			{{#user}}
-				<li class="mainmenu-separator">User</li>
-				<li><a href='?{{{forms.get.page}}}={{{forms.pages.author}}}&{{{forms.get.author.username}}}={{user.username}}'>Profile</a></li>
+				<li class="mainmenu-separator">Utilisateur</li>
+				<li><a href='?{{{forms.get.page}}}={{{forms.pages.author}}}&{{{forms.get.author.username}}}={{user.username}}'>Profil</a></li>
 				{{^cookies.is_streamer}}
-					<li><a href='?{{{forms.get.page}}}={{{forms.pages.usersettings}}}'>User settings</a> <span class='updated'></span></li>
+					<li><a href='?{{{forms.get.page}}}={{{forms.pages.usersettings}}}'>Paramètres</a>
+            <span class='updated'></span></li>
 				{{/cookies.is_streamer}}
 			{{/user}}
 
-			<li class="mainmenu-separator">Misc</li>
-			<li><a href='https://github.com/OneHourGameJam/OneHourGameJam/issues' target='_BLANK'>Report bug</a></li>
+			<li class="mainmenu-separator">Autre</li>
+			<li><a href='https://github.com/OneHourGameJam/OneHourGameJam/issues' target='_BLANK'>Reporter un bug</a></li>
 			{{#user}}
 				{{#cookies.is_streamer}}
-					<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.streaming_mode}}}=0'>Disable streamer mode</a></li>
+					<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.streaming_mode}}}=0'>Désactiver
+            le mode Streamer</a></li>
 				{{/cookies.is_streamer}}
 				{{#twitch}}
 					{{^cookies.is_streamer}}
-						<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.streaming_mode}}}=1'>Streamer mode</a></li>
+						<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.streaming_mode}}}=1'>Activer le mode
+              Streamer</a></li>
 					{{/cookies.is_streamer}}
 				{{/twitch}}
 			{{/user}}
 			{{#cookies.darkmode}}
-				<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.dark_mode}}}=0'>Enable light mode</a></li>
+				<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.dark_mode}}}=0'>Passer en light
+          mode</a></li>
 			{{/cookies.darkmode}}
 			{{^cookies.darkmode}}
-				<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.dark_mode}}}=1'>Enable dark mode</a></li>
+				<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.dark_mode}}}=1'>Passer en dark
+          mode</a></li>
 			{{/cookies.darkmode}}
 			
 			{{#user.admin}}
 				{{^cookies.is_streamer}}
 					<li class="mainmenu-separator">Administration</li>
-					<li><a href='?{{{forms.get.page}}}={{{forms.pages.newjam}}}'>Schedule {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}}</a></li>
+					<li><a href='?{{{forms.get.page}}}={{{forms.pages.newjam}}}'>Planifier {{CONFIG.VALUES
+            .JAM_PHRASE_SINGULAR}}</a></li>
 					<li><a href='?{{{forms.get.page}}}={{{forms.pages.config}}}'>Configuration</a></li>
-					<li><a href='?{{{forms.get.page}}}={{{forms.pages.managethemes}}}'>Manage {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}</a></li>
-					<li><a href='?{{{forms.get.page}}}={{{forms.pages.editcontent}}}'>Manage content</a></li>
-					<li><a href='?{{{forms.get.page}}}={{{forms.pages.editusers}}}'>Manage users</a></li>
-					<li><a href='?{{{forms.get.page}}}={{{forms.pages.editplatforms}}}'>Manage platforms</a></li>
-					<li><a href='?{{{forms.get.page}}}={{{forms.pages.editassets}}}'>Manage assets</a></li>
-					<li><a href='?{{{forms.get.page}}}={{{forms.pages.polls}}}'>Poll results</a></li>
+					<li><a href='?{{{forms.get.page}}}={{{forms.pages.managethemes}}}'>Gérer {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}</a></li>
+					<li><a href='?{{{forms.get.page}}}={{{forms.pages.editcontent}}}'>Gérer le contenu</a></li>
+					<li><a href='?{{{forms.get.page}}}={{{forms.pages.editusers}}}'>Gérer les utilisateurs</a></li>
+					<li><a href='?{{{forms.get.page}}}={{{forms.pages.editplatforms}}}'>Gérer les plateformes</a></li>
+					<li><a href='?{{{forms.get.page}}}={{{forms.pages.editassets}}}'>Gérer les assets</a></li>
+					<li><a href='?{{{forms.get.page}}}={{{forms.pages.polls}}}'>Résultats du sondage</a></li>
 					{{#forms.pages.notifications.editnotifications}}
-						<li><a href='?{{{forms.get.page}}}={{{forms.pages.notifications.editnotifications}}}'>Manage notifications</a></li>
+						<li><a href='?{{{forms.get.page}}}={{{forms.pages.notifications.editnotifications}}}'>Gérer les
+              notifications</a></li>
 					{{/forms.pages.notifications.editnotifications}}
 					{{#forms.pages.admin_log.adminlog}}
 						<li><a href='?{{{forms.get.page}}}={{{forms.pages.admin_log.adminlog}}}'>Admin Log</a></li>
@@ -135,7 +144,9 @@
 			{{/user.admin}}
 
 			{{#cookies.is_streamer}}
-				<li class="mainmenu-separator">Some menu items are hidden in streamer mode (<a href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.streaming_mode}}}=0'>Disable Streamer Mode</a>)</li>
+				<li class="mainmenu-separator">Certains menus sont cachés en mode Streamer (<a
+            href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.streaming_mode}}}=0'>Désactiver le
+          mode Streamer</a>)</li>
 			{{/cookies.is_streamer}}
 		</ul>
 		
@@ -148,7 +159,8 @@
 
 			{{#CONFIG.VALUES.TWITCH_ACCOUNT}}
 				<a href="https://twitch.tv/{{CONFIG.VALUES.TWITCH_ACCOUNT}}" target='_blank'>
-					<div class='mediaButton twitchButton'><img src='{{{page.template_path}}}images/twitch.png' class="menuButton" /> Watch</div>
+					<div class='mediaButton twitchButton'><img src='{{{page.template_path}}}images/twitch.png'
+              class="menuButton" /> Regarder</div>
 				</a>
 			{{/CONFIG.VALUES.TWITCH_ACCOUNT}}
 

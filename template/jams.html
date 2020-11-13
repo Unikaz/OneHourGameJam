@@ -1,16 +1,16 @@
 <h1 class="pageHeading">{{CONFIG.VALUES.JAM_PHRASE_PLURAL}}</h1>
 <div class="pageDescription">
-	This list contains all {{CONFIG.VALUES.JAM_PHRASE_PLURAL}}. The table is sortable by clicking a column header.
+	Cette liste contient toutes les {{CONFIG.VALUES.JAM_PHRASE_PLURAL}}. Le tableau peut être trié en cliquant sur les en-têtes.
 </div>
 
-<input type="text" class="form-control searchInputField" id='js-jamsearch' placeholder="Search by Number, {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} or Date..." onkeyup="FilterJamsTable()">
+<input type="text" class="form-control searchInputField" id='js-jamsearch' placeholder="Recherche par numéro, {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} ou date..." onkeyup="FilterJamsTable()">
 
 <div class='panel-body table-responsive'>
-	Click on a column header to sort.
+	Cliquer sur l'en-tête pour trier.
 	<table id="js-jamtable" class="table sortable dataTable">
 		<thead>
 			<tr class='sortableHeader dataTableHeaderRow'>
-				<th>Number</th>
+				<th>Numéro</th>
 				<th>{{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}</th>
 				<th>Date</th>
 				<th>{{CONFIG.VALUES.GAME_PHRASE_PLURAL}}</th>

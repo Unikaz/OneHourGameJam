@@ -73,11 +73,11 @@ class SiteActionData{
                 "php/actions/authentication/login.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "Logged in successfully"),
-                    "INVALID_PASSWORD_LENGTH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Incorrect password length. Must be between ".$configData->ConfigModels[CONFIG_MINIMUM_PASSWORD_LENGTH]->Value." and ".$configData->ConfigModels[CONFIG_MAXIMUM_PASSWORD_LENGTH]->Value." characters long."),
-                    "INVALID_USERNAME_LENGTH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Incorrect username length. Must be between ".$configData->ConfigModels[CONFIG_MINIMUM_USERNAME_LENGTH]->Value." and ".$configData->ConfigModels[CONFIG_MAXIMUM_USERNAME_LENGTH]->Value." characters long."),
-                    "USER_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "That username doesn't exist.<br>Do you want to <a href='?".GET_PAGE."=".PAGE_REGISTER."'>create an account</a>?"),
-                    "INCORRECT_PASSWORD" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Incorrect username/password combination."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "Connexion réussie"),
+                    "INVALID_PASSWORD_LENGTH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Taille du mot de passe incorrecte. Il doit être entre ".$configData->ConfigModels[CONFIG_MINIMUM_PASSWORD_LENGTH]->Value." et ".$configData->ConfigModels[CONFIG_MAXIMUM_PASSWORD_LENGTH]->Value." caractères."),
+                    "INVALID_USERNAME_LENGTH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Taille du pseudo incorrecte. Il doit être entre ".$configData->ConfigModels[CONFIG_MINIMUM_USERNAME_LENGTH]->Value." et ".$configData->ConfigModels[CONFIG_MAXIMUM_USERNAME_LENGTH]->Value." caractères."),
+                    "USER_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Ce pseudo n'existe pas.<br>Voulez-vous <a href='?".GET_PAGE."=".PAGE_REGISTER."'>créer un compte</a> ?"),
+                    "INCORRECT_PASSWORD" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Mauvais pseudo/mot de passe."),
                 )
             ),
             new SiteActionModel(
@@ -85,10 +85,10 @@ class SiteActionData{
                 "php/actions/authentication/register.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "Logged in successfully"),
-                    "INVALID_PASSWORD_LENGTH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_REGISTER, MESSAGE_WARNING, "Incorrect password length. Must be between ".$configData->ConfigModels[CONFIG_MINIMUM_PASSWORD_LENGTH]->Value." and ".$configData->ConfigModels[CONFIG_MAXIMUM_PASSWORD_LENGTH]->Value." characters long."),
-                    "INVALID_USERNAME_LENGTH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_REGISTER, MESSAGE_WARNING, "Incorrect username length. Must be between ".$configData->ConfigModels[CONFIG_MINIMUM_USERNAME_LENGTH]->Value." and ".$configData->ConfigModels[CONFIG_MAXIMUM_USERNAME_LENGTH]->Value." characters long."),
-                    "USERNAME_ALREADY_REGISTERED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_REGISTER, MESSAGE_WARNING, "That username already exists.<br>Did you want to <a href='?".GET_PAGE."=".PAGE_LOGIN."'>log in</a>?"),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "Connexion réussie"),
+                    "INVALID_PASSWORD_LENGTH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_REGISTER, MESSAGE_WARNING, "Taille du mot de passe incorrecte. Il doit être entre ".$configData->ConfigModels[CONFIG_MINIMUM_PASSWORD_LENGTH]->Value." et ".$configData->ConfigModels[CONFIG_MAXIMUM_PASSWORD_LENGTH]->Value." caractères."),
+                    "INVALID_USERNAME_LENGTH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_REGISTER, MESSAGE_WARNING, "Taille du pseudo incorrecte. Il doit être entre ".$configData->ConfigModels[CONFIG_MINIMUM_USERNAME_LENGTH]->Value." et ".$configData->ConfigModels[CONFIG_MAXIMUM_USERNAME_LENGTH]->Value." caractères."),
+                    "USERNAME_ALREADY_REGISTERED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_REGISTER, MESSAGE_WARNING, "Ce pseudo existe déjà.<br>Voulez-vous <a href='?".GET_PAGE."=".PAGE_LOGIN."'>vous connecter</a> ?"),
                 )
             ),
             new SiteActionModel(
@@ -96,7 +96,7 @@ class SiteActionData{
                 "php/actions/authentication/logout.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "Logged out successfully")
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "Déconnexion réussie.")
                 )
             ),
             new SiteActionModel(
@@ -104,21 +104,21 @@ class SiteActionData{
                 "php/actions/games/submit.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS_ENTRY_ADDED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "Game Added."),
-                    "SUCCESS_ENTRY_UPDATED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "Game Updated."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not Logged In."),
-                    "MISSING_GAME_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "Missing Game Name."),
-                    "INVALID_GAME_URL" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "Invalid Game URL."),
-                    "INVALID_DESCRIPTION" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "Missing Description."),
-                    "INVALID_JAM_NUMBER" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_ERROR, "Invalid Jam Number, please contact administrators."),
-                    "NO_JAM_TO_SUBMIT_TO" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_ERROR, "There is no active jam to submit to, please contact administrators."),
-                    "JAM_NOT_STARTED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "That jam hasn't yet started."),
-                    "INVALID_COLOR" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "The selected color is not valid."),
-                    "SCREENSHOT_NOT_AN_IMAGE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "The uploaded screenshot is not an image."),
-                    "SCREENSHOT_TOO_BIG" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "The uploaded screenshot is too big."),
-                    "SCREENSHOT_WRONG_FILE_TYPE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "Screenshot is not of a valid file type."),
-                    "CANNOT_SUBMIT_TO_PAST_JAM" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_ERROR, "Cannot submit to a past jam, please contact administrators."),
-                    "ENTRY_NOT_ADDED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_ERROR, "An internal error stopped the entry from being added, please contact an administrator."),
+                    "SUCCESS_ENTRY_ADDED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "Jeu ajouté."),
+                    "SUCCESS_ENTRY_UPDATED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "Jeu mis à jour."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Vous n'êtes pas connecté."),
+                    "MISSING_GAME_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "Votre jeu n'a pas de nom."),
+                    "INVALID_GAME_URL" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "L'URL est invalide."),
+                    "INVALID_DESCRIPTION" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "Il manque la description."),
+                    "INVALID_JAM_NUMBER" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_ERROR, "Numéro de Jam invalide, merci de contacter un administrateur."),
+                    "NO_JAM_TO_SUBMIT_TO" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_ERROR, "Il n'y a pas de Jam active à laquelle publier, merci de contacter un administrateur."),
+                    "JAM_NOT_STARTED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Cette Jam n'a pas encore commencé."),
+                    "INVALID_COLOR" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "La couleur sélectionnée n'est pas disponible."),
+                    "SCREENSHOT_NOT_AN_IMAGE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "Le screenshot uploadé n'est pas une image."),
+                    "SCREENSHOT_TOO_BIG" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "L'image uploadée est trop grande."),
+                    "SCREENSHOT_WRONG_FILE_TYPE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_WARNING, "L'image n'est pas d'un type valide."),
+                    "CANNOT_SUBMIT_TO_PAST_JAM" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_ERROR, "Vous ne pouvez publier sur une Jam terminée, merci de contacter un administrateur."),
+                    "ENTRY_NOT_ADDED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_SUBMIT, MESSAGE_ERROR, "Une erreur interne a empêché l'ajout de votre jeu, merci de contacter un administrateur."),
                 )
             ),
             new SiteActionModel(
@@ -126,14 +126,14 @@ class SiteActionData{
                 "php/actions/jam/newjam.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_SUCCESS, "Jam scheduled."),
-                    "INVALID_TIME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_NEW_JAM, MESSAGE_WARNING, "Time is not valid."),
-                    "INVALID_DATE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_NEW_JAM, MESSAGE_WARNING, "Date is not valid."),
-                    "INVALID_THEME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_NEW_JAM, MESSAGE_WARNING, "Theme is not valid."),
-                    "INVALID_DEFAULT_ENTRY_ICON_URL" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_NEW_JAM, MESSAGE_WARNING, "Default entry icon is not valid."),
-                    "INVALID_JAM_NUMBER" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_NEW_JAM, MESSAGE_ERROR, "Jam number is not valid."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_SUCCESS, "Jam programmée."),
+                    "INVALID_TIME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_NEW_JAM, MESSAGE_WARNING, "Heure invalide."),
+                    "INVALID_DATE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_NEW_JAM, MESSAGE_WARNING, "Date invalide."),
+                    "INVALID_THEME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_NEW_JAM, MESSAGE_WARNING, "Thème invalide."),
+                    "INVALID_DEFAULT_ENTRY_ICON_URL" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_NEW_JAM, MESSAGE_WARNING, "Icône par défaut est invalide."),
+                    "INVALID_JAM_NUMBER" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_NEW_JAM, MESSAGE_ERROR, "Le numéro de Jam est invalide."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -141,11 +141,11 @@ class SiteActionData{
                 "php/actions/jam/deletejam.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_SUCCESS, "Jam Deleted."),
-                    "NO_JAMS_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "No jams exist."),
-                    "INVALID_JAM_ID" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Invalid jam id."),
-                    "CANNOT_DELETE_JAM" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Cannot delete jam."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Only admins can perform this action."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_SUCCESS, "Jam supprimée."),
+                    "NO_JAMS_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Il n'existe pas de Jam."),
+                    "INVALID_JAM_ID" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "ID de la Jam invalide."),
+                    "CANNOT_DELETE_JAM" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Impossible de supprimer la Jam."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
                 )
             ),
             new SiteActionModel(
@@ -153,11 +153,11 @@ class SiteActionData{
                 "php/actions/games/deleteentry.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_SUCCESS, "Entry deleted."),
-                    "NO_JAMS_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "No jams exist."),
-                    "INVALID_JAM_ID" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Invalid jam id."),
-                    "CANNOT_DELETE_ENTRY" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "cannot delete entry."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Only admins can perform this action."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_SUCCESS, "Entrée supprimée."),
+                    "NO_JAMS_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Il n'existe pas de Jam."),
+                    "INVALID_JAM_ID" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "ID de la Jam invalide."),
+                    "CANNOT_DELETE_ENTRY" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Impossible de supprimer la Jam."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
                 )
             ),
             new SiteActionModel(
@@ -165,9 +165,9 @@ class SiteActionData{
                 "php/actions/config/saveconfig.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_CONFIG, MESSAGE_SUCCESS, "Config updated."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
-                    "NO_CHANGE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_CONFIG, MESSAGE_WARNING, "No changes to config."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_CONFIG, MESSAGE_SUCCESS, "Configuration mise à jour."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
+                    "NO_CHANGE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_CONFIG, MESSAGE_WARNING, "Aucun changement à la configuration."),
                 )
             ),
             new SiteActionModel(
@@ -175,18 +175,18 @@ class SiteActionData{
                 "php/actions/asset/saveassetedits.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS_INSERTED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_SUCCESS, "Asset added."),
-                    "SUCCESS_UPDATED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_SUCCESS, "Asset updated"),
-                    "COULD_NOT_DETERMINE_URL" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_ERROR, "Could not find a URL for the asset. Please look at the assets folder on the web server."),
-                    "UNLOADED_ASSET_TOO_BIG" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "Asset too big."),
-                    "COULD_NOT_FIND_VALID_FILE_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_ASSETS, MESSAGE_WARNING, "Could not find a file name for the asset. Please look at the assets folder on the web server."),
-                    "INVALID_ASSET_TYPE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "Invalid asset type."),
-                    "ASSET_TYPE_EMPTY" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "Missing asset type."),
-                    "INVALID_DESCRIPTION" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "Invalid description."),
-                    "INVALID_TITLE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "Invalid title."),
-                    "INVALID_AUTHOR" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "Invalid author - must match a username of a registered user."),
-                    "AUTHOR_EMPTY" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "missing author."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
+                    "SUCCESS_INSERTED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_SUCCESS, "Asset ajouté."),
+                    "SUCCESS_UPDATED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_SUCCESS, "Asset mis à jour"),
+                    "COULD_NOT_DETERMINE_URL" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_ERROR, "Impossible de trouver l'URL de l'asset. Merci de regarder dans le dossier des assets sur le serveur web."),
+                    "UNLOADED_ASSET_TOO_BIG" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "Asset trop gros."),
+                    "COULD_NOT_FIND_VALID_FILE_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_ASSETS, MESSAGE_WARNING, "Impossible de trouver un nom de fichier pour l'asset.  Merci de regarder dans le dossier des assets sur le serveur web."),
+                    "INVALID_ASSET_TYPE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "Type d'asset invalide."),
+                    "ASSET_TYPE_EMPTY" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "Type d'asset manquant."),
+                    "INVALID_DESCRIPTION" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "Description invalide."),
+                    "INVALID_TITLE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "Titre invalide."),
+                    "INVALID_AUTHOR" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "Auteur invalide - ce doit être le pseudo d'un utilisateur enregistré."),
+                    "AUTHOR_EMPTY" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_WARNING, "auteur manquant."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
                 )
             ),
             new SiteActionModel(
@@ -194,9 +194,9 @@ class SiteActionData{
                 "php/actions/asset/deleteasset.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_SUCCESS, "Asset deleted."),
-                    "ASSET_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_ERROR, "asset does not exist."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_SUCCESS, "Asset supprimé."),
+                    "ASSET_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_ASSETS, MESSAGE_ERROR, "asset n'existe pas."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
                 )
             ),
             new SiteActionModel(
@@ -204,18 +204,18 @@ class SiteActionData{
                 "php/actions/jam/savejamedits.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_SUCCESS, "Jam updated."),
-                    "INVALID_TIME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_WARNING, "Invalid time."),
-                    "INVALID_DATE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_WARNING, "Invalid date."),
-                    "INVALID_THEME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_WARNING, "Invalid theme."),
-                    "INVALID_DEFAULT_ENTRY_ICON_URL" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_WARNING, "Default entry icon is not valid."),
-                    "INVALID_JAM_NUMBER" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Invalid jam number"),
-                    "INVALID_STREAMER_USERNAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Stramer username is not valid"),
-                    "MISSING_STREAMER_USERNAME_OR_TWITCH_USERNAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "For streamers both the username and twitch username must be set"),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
-                    "NO_JAMS_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "No jams exist."),
-                    "INVALID_JAM_ID" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Invalid jam id."),
-                    "INVALID_COLOR" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_WARNING, "Invalid colors."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_SUCCESS, "Jam mise à jour."),
+                    "INVALID_TIME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_WARNING, "Heure invalide."),
+                    "INVALID_DATE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_WARNING, "Date invalide."),
+                    "INVALID_THEME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_WARNING, "Thème invalide."),
+                    "INVALID_DEFAULT_ENTRY_ICON_URL" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_WARNING, "Icône par défaut est invalide."),
+                    "INVALID_JAM_NUMBER" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Numéro de Jam invalide"),
+                    "INVALID_STREAMER_USERNAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Le pseudo du streamerest invalide"),
+                    "MISSING_STREAMER_USERNAME_OR_TWITCH_USERNAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Pour les streamers le pseudo et le nom sur Twitch doivent être entrés"),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
+                    "NO_JAMS_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "Aucune Jam n'existe."),
+                    "INVALID_JAM_ID" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_ERROR, "ID de Jam invalide."),
+                    "INVALID_COLOR" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_CONTENT, MESSAGE_WARNING, "Couleur invalide."),
                 )
             ),
             new SiteActionModel(
@@ -223,10 +223,10 @@ class SiteActionData{
                 "php/actions/user/saveuseredits.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_SUCCESS, "User successfully edited"),
-                    "USER_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_ERROR, "User does not exist."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_SUCCESS, "Utilisateur modifié avec succès."),
+                    "USER_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_ERROR, "L'utilisateur n'existe pas."),
                     "INVALID_ISADMIN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_ERROR, "Invalid IsAdmin."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
                 )
             ),
             new SiteActionModel(
@@ -234,11 +234,11 @@ class SiteActionData{
                 "php/actions/user/savenewuserpassword.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_SUCCESS, "Password Updated."),
-                    "USER_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_ERROR, "User does not exist."),
-                    "INVALID_PASSWORD_LENGTH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_WARNING, "Incorrect password length. Must be between ".$configData->ConfigModels[CONFIG_MINIMUM_PASSWORD_LENGTH]->Value." and ".$configData->ConfigModels[CONFIG_MAXIMUM_PASSWORD_LENGTH]->Value." characters long."),
-                    "PASSWORDS_DONT_MATCH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_WARNING, "Passwords do not match."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_SUCCESS, "Mot de passe mis à jour."),
+                    "USER_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_ERROR, "L'utilisateur n'existe pas."),
+                    "INVALID_PASSWORD_LENGTH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_WARNING, "Taille du mot de passe incorrect. Il doit être entre ".$configData->ConfigModels[CONFIG_MINIMUM_PASSWORD_LENGTH]->Value." et ".$configData->ConfigModels[CONFIG_MAXIMUM_PASSWORD_LENGTH]->Value." caractères."),
+                    "PASSWORDS_DONT_MATCH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_WARNING, "Les mots de passe ne correspondent pas."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
                 )
             ),
             new SiteActionModel(
@@ -246,12 +246,12 @@ class SiteActionData{
                 "php/actions/user/changepassword.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_SUCCESS, "Password Updated."),
-                    "USER_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_ERROR, "User does not exist."),
-                    "INVALID_PASSWORD_LENGTH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_WARNING, "Incorrect password length. Must be between ".$configData->ConfigModels[CONFIG_MINIMUM_PASSWORD_LENGTH]->Value." and ".$configData->ConfigModels[CONFIG_MAXIMUM_PASSWORD_LENGTH]->Value." characters long."),
-                    "PASSWORDS_DONT_MATCH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_WARNING, "Passwords do not match."),
-                    "INCORRECT_PASSWORD" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_WARNING, "Old password is not correct."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_SUCCESS, "Mot de passe mis à jour."),
+                    "USER_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_ERROR, "L'utilisateur n'existe pas."),
+                    "INVALID_PASSWORD_LENGTH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_WARNING, "Taille du mot de passe incorrect. Il doit être entre ".$configData->ConfigModels[CONFIG_MINIMUM_PASSWORD_LENGTH]->Value." et ".$configData->ConfigModels[CONFIG_MAXIMUM_PASSWORD_LENGTH]->Value." caractères."),
+                    "PASSWORDS_DONT_MATCH" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_WARNING, "Les mots de passe ne correspondent pas."),
+                    "INCORRECT_PASSWORD" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_WARNING, "L'ancien mot de passe est incorrect"),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -259,10 +259,10 @@ class SiteActionData{
                 "php/actions/user/saveuserchanges.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_SUCCESS, "User settings updated."),
-                    "INVALID_EMAIL" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_WARNING, "Email is not valid."),
-                    "INVALID_DISPLAY_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_WARNING, "Incorrect display name length. Must be between ".$configData->ConfigModels[CONFIG_MINIMUM_DISPLAY_NAME_LENGTH]->Value." and ".$configData->ConfigModels[CONFIG_MAXIMUM_DISPLAY_NAME_LENGTH]->Value." characters long."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_SUCCESS, "Utilisateur mis à jour."),
+                    "INVALID_EMAIL" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_WARNING, "L'email est invalide."),
+                    "INVALID_DISPLAY_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_USER_SETTINGS, MESSAGE_WARNING, "Pseudo incorrecte. Il doit être entre".$configData->ConfigModels[CONFIG_MINIMUM_DISPLAY_NAME_LENGTH]->Value." et ".$configData->ConfigModels[CONFIG_MAXIMUM_DISPLAY_NAME_LENGTH]->Value." caractères."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -270,13 +270,13 @@ class SiteActionData{
                 "php/actions/theme/savenewtheme.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_SUCCESS, "Theme added."),
-                    "THEME_ALREADY_SUGGESTED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "Theme is already suggested."),
-                    "INVALID_THEME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "Theme is not valid."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
-                    "THEME_RECENTLY_USED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "Theme has been used in a recent jam."),
-                    "TOO_MANY_THEMES" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "You can only submit ".$configData->ConfigModels[CONFIG_THEMES_PER_USER]->Value." themes. Please delete past themes to submit again."),
-                    "THEME_BANNED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "This theme's been banned.")
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_SUCCESS, "Thème ajouté."),
+                    "THEME_ALREADY_SUGGESTED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "Thème déjà suggéré."),
+                    "INVALID_THEME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "Le thème est invalide."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
+                    "THEME_RECENTLY_USED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "Le thème a été utilisé pour une Jam récente"),
+                    "TOO_MANY_THEMES" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "Vous pouvez seulement soumettre ".$configData->ConfigModels[CONFIG_THEMES_PER_USER]->Value." thèmes. Merci de supprimer un thème passé pour en ajouter un nouveau."),
+                    "THEME_BANNED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "Ce thème a été banni.")
                 )
             ),
             new SiteActionModel(
@@ -284,12 +284,12 @@ class SiteActionData{
                 "php/actions/theme/deletetheme.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS_THEMES" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_SUCCESS, "Theme deleted."),
-                    "SUCCESS_MANAGETHEMES" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_SUCCESS, "Theme deleted."),
-                    "INVALID_THEME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "Theme is not valid."),
-                    "THEME_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "Theme does not exist."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCCESS_THEMES" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_SUCCESS, "Thème supprimé."),
+                    "SUCCESS_MANAGETHEMES" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_SUCCESS, "Thème supprimé."),
+                    "INVALID_THEME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "Le thème est invalide."),
+                    "THEME_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_THEMES, MESSAGE_WARNING, "Le thème n'existe pas."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -297,11 +297,11 @@ class SiteActionData{
                 "php/actions/theme/deletethemes.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_SUCCESS, "Themes deleted."),
-                    "FAILURE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_WARNING, "One or more themes couldn't be deleted."),
-                    "NO_THEMES_SELECTED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_WARNING, "You must select at least one theme to delete."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_SUCCESS, "Thèmes supprimés."),
+                    "FAILURE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_WARNING, "Un ou plusieurs thèmes n'ont pas pu être supprimés."),
+                    "NO_THEMES_SELECTED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_WARNING, "Vous devez sélectionner au moins un thème à supprimer."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -309,11 +309,11 @@ class SiteActionData{
                 "php/actions/theme/bantheme.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_SUCCESS, "Theme banned."),
-                    "INVALID_THEME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_WARNING, "Invalid theme."),
-                    "THEME_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_WARNING, "Theme does not exist."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_SUCCESS, "Thème banni."),
+                    "INVALID_THEME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_WARNING, "Thème invalide."),
+                    "THEME_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_WARNING, "Le thème n'existe pas."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -321,11 +321,11 @@ class SiteActionData{
                 "php/actions/theme/unbantheme.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_SUCCESS, "Theme unbanned."),
-                    "INVALID_THEME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_WARNING, "Invalid theme."),
-                    "THEME_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_WARNING, "Theme does not exist"),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_SUCCESS, "Thème dé-banni."),
+                    "INVALID_THEME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_WARNING, "Thème invalide."),
+                    "THEME_DOES_NOT_EXIST" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MANAGE_THEMES, MESSAGE_WARNING, "Le thème n'existe pas"),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -341,11 +341,11 @@ class SiteActionData{
                 "php/actions/adminvote/adminvote.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCESS_UPDATE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_SUCCESS, "Admin vote updated."),
-                    "SUCESS_INSERT" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_SUCCESS, "Admin vote cast."),
-                    "INVALID_VOTE_TYPE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_WARNING, "Invalid vote type."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCESS_UPDATE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_SUCCESS, "Vote admin mis à jour."),
+                    "SUCESS_INSERT" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_SUCCESS, "Vote admin ajouté."),
+                    "INVALID_VOTE_TYPE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_USERS, MESSAGE_WARNING, "Type de vote invalide."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -353,15 +353,15 @@ class SiteActionData{
                 "php/actions/platform/newplatform.php",
                 "?".GET_PAGE."=".PAGE_EDIT_PLATFORMS,
                 Array(
-                    "SUCCESS_PLATFORM_ADDED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_SUCCESS, "Platform added."),
-                    "ICON_FAILED_TO_UPLOAD" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_ERROR, "Icon failed to uplaod."),
-                    "ICON_WRONG_FILE_TYPE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Icon file type incorrect: Must be a png."),
-                    "ICON_TOO_BIG" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Uploaded image is too big (max 20kB)."),
-                    "ICON_NOT_AN_IMAGE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Uploaded icon is not an image."),
-                    "DUPLICATE_PLATFORM_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Platform already exists."),
-                    "MISSING_PLATFORM_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Platform name must not be blank."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCCESS_PLATFORM_ADDED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_SUCCESS, "Plateforme ajoutée."),
+                    "ICON_FAILED_TO_UPLOAD" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_ERROR, "Upload de l'icône a échoué."),
+                    "ICON_WRONG_FILE_TYPE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Type d'icône incorrecte. Doit être un png."),
+                    "ICON_TOO_BIG" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "L'image est trop grande (max 20kB)."),
+                    "ICON_NOT_AN_IMAGE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "L'icône ajoutée n'est pas une image."),
+                    "DUPLICATE_PLATFORM_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "La plateforme existe déjà."),
+                    "MISSING_PLATFORM_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Le nom de la plateforme ne doit pas être vide."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -369,15 +369,15 @@ class SiteActionData{
                 "php/actions/platform/editplatform.php",
                 "?".GET_PAGE."=".PAGE_EDIT_PLATFORMS,
                 Array(
-                    "SUCCESS_PLATFORM_EDITED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_SUCCESS, "Platform edited."),
-                    "ICON_WRONG_FILE_TYPE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Icon file type incorrect: Must be a png."),
-                    "ICON_TOO_BIG" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Uploaded image is too big (max 20kB)."),
-                    "ICON_NOT_AN_IMAGE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Uploaded icon is not an image."),
-                    "UNKNOWN_PLATFORM" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Unknown platform."),
-                    "DUPLICATE_PLATFORM_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Another platform with that name already exists."),
-                    "MISSING_PLATFORM_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Platform name must not be blank."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCCESS_PLATFORM_EDITED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_SUCCESS, "Plateforme éditée."),
+                    "ICON_WRONG_FILE_TYPE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Type d'icône incorrecte. Doit être un png."),
+                    "ICON_TOO_BIG" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "L'image est trop grande (max 20kB)."),
+                    "ICON_NOT_AN_IMAGE" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "L'icône ajoutée n'est pas une image."),
+                    "UNKNOWN_PLATFORM" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Plateforme inconnue."),
+                    "DUPLICATE_PLATFORM_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Une autre plateforme avec le même nom existe déjà."),
+                    "MISSING_PLATFORM_NAME" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Le nom de la plateforme ne doit pas être vide."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -385,10 +385,10 @@ class SiteActionData{
                 "php/actions/platform/deleteplatform.php",
                 "?".GET_PAGE."=".PAGE_EDIT_PLATFORMS,
                 Array(
-                    "SUCCESS_PLATFORM_SOFT_DELETED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_SUCCESS, "Platform soft deleted."),
-                    "UNKNOWN_PLATFORM" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Unknown platform."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCCESS_PLATFORM_SOFT_DELETED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_SUCCESS, "La plateforme a été 'soft' supprimée."),
+                    "UNKNOWN_PLATFORM" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Plateforme inconnue."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -396,10 +396,10 @@ class SiteActionData{
                 "php/actions/platform/undeleteplatform.php",
                 "?".GET_PAGE."=".PAGE_EDIT_PLATFORMS,
                 Array(
-                    "SUCCESS_PLATFORM_RESTORED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_SUCCESS, "Platform restored."),
-                    "UNKNOWN_PLATFORM" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Unknown platform."),
-                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Only admins can perform this action."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCCESS_PLATFORM_RESTORED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_SUCCESS, "Plateforme restaurée."),
+                    "UNKNOWN_PLATFORM" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_EDIT_PLATFORMS, MESSAGE_WARNING, "Plateforme inconnue."),
+                    "NOT_AUTHORIZED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Seuls les administrateurs peuvent faire cette action."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -407,12 +407,12 @@ class SiteActionData{
                 "php/actions/jam/setstreamer.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "You're now the streamer for this jam."),
-                    "STREAMER_ALREADY_SET" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_WARNING, "A streamer is already set for this jam."),
-                    "INVALID_JAM_ID" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Jam not found."),
-                    "NO_JAM_TO_SUBMIT_TO" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "No jam to submit to."),
-                    "PERMISSION_DENIED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Missing permission."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "Vous êtes maintenant le streamer pour cette Jam."),
+                    "STREAMER_ALREADY_SET" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_WARNING, "Un stream est déjà présent pour cette Jam."),
+                    "INVALID_JAM_ID" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Jam non trouvée."),
+                    "NO_JAM_TO_SUBMIT_TO" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Pas de Jam à laquelle soumettre."),
+                    "PERMISSION_DENIED" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Permission manquante."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             ),
             new SiteActionModel(
@@ -420,11 +420,11 @@ class SiteActionData{
                 "php/actions/jam/unsetstreamer.php",
                 "?".GET_PAGE."=".PAGE_MAIN,
                 Array(
-                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "You're now the streamer for this jam."),
+                    "SUCCESS" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_SUCCESS, "Vous êtes maintenant le streamer pour cette Jam."),
                     "NOT_CURRENTLY_STREAMER" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_WARNING, "You're not the streamer for this jam."),
-                    "INVALID_JAM_ID" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Jam not found."),
-                    "NO_JAM_TO_SUBMIT_TO" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "No jam to submit to."),
-                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Not logged in."),
+                    "INVALID_JAM_ID" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Jam non trouvée."),
+                    "NO_JAM_TO_SUBMIT_TO" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_MAIN, MESSAGE_ERROR, "Pas de Jam à laquelle soumettre."),
+                    "NOT_LOGGED_IN" => new SiteActionResultModel("?".GET_PAGE."=".PAGE_LOGIN, MESSAGE_WARNING, "Non connecté."),
                 )
             )
         );

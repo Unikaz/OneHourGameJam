@@ -24,7 +24,7 @@
 				</div>
 				<div class="col-md-3 alignCenter headerColumn headerTimer">
 					<p>
-						<b>Next {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}}:</b><br />
+						<b>Prochaine {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}}:</b><br />
 						<script type='text/javascript'>
 							var date = new Date('{{{jams.next_jam_timer_code}}}');
 							var now = new Date();
@@ -43,9 +43,10 @@
 								let update_interval = 60000;
 								var timerString = "";
 								if (d > 0){
-									timerString = d+" day"+((d > 1) ? "s" : "")+((h > 0) ? (" "+h + " hour"+((h > 1) ? "s" : "")) : "");
+									timerString = d+" jour"+((d > 1) ? "s" : "")+((h > 0) ? (" "+h + " heure"+((h > 1) ? "s" : "")) : "");
 								}else if (d == 0 && h > 0){
-									timerString = h+" hour"+((h > 1) ? "s" : "")+((m > 0) ? (" "+m + " minute"+((m > 1) ? "s" : "")) : "");
+									timerString = h+" heure"+((h > 1) ? "s" : "")+((m > 0) ? (" "+m + " minute"+((m > 1) ? "s" : "")) :
+                      "");
 								}else if (d == 0 && h == 0 && m > 0){
 									timerString = m+" min"+((s > 0) ? (" "+s + " s") : "");
 									update_interval = 500;

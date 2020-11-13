@@ -20,10 +20,10 @@
                         <span>{{date}}</span>
                     {{/jam_started}}
                     {{^jam_started}}
-                        <i><span>{{date}} at {{time}} UTC</span></i>
+                        <i><span>{{date}} à {{time}} UTC</span></i>
                     {{/jam_started}}
                     {{#streamer_is_set}}
-                        <br />Streamed by <a href='https://www.twitch.tv/{{{streamer_twitch_username}}}' target='_blank'>{{streamer_user_display_name}} (@{{streamer_twitch_username}})</a>
+                        <br />Streamé par <a href='https://www.twitch.tv/{{{streamer_twitch_username}}}' target='_blank'>{{streamer_user_display_name}} (@{{streamer_twitch_username}})</a>
                     {{/streamer_is_set}}
                 </div>
                 <div class="col-xs-3 jamHeaderStatsContainer">
@@ -38,7 +38,7 @@
                                     <div class="form-group">
                                         <input type="hidden" id="jam_streamer_jam_number" name='{{{forms.form.setstreamer.jam_number}}}' value="{{{jam_number}}}" required>
                                         {{^cookies.is_streamer}}
-                                            <button type="submit" name='{{{forms.form.action}}}' value='{{{forms.action.unsetstreamer}}}' class="btn btn-default">Stop Being Streamer</button>
+                                            <button type="submit" name='{{{forms.form.action}}}' value='{{{forms.action.unsetstreamer}}}' class="btn btn-default">Arrêter d'être Streamer</button>
                                         {{/cookies.is_streamer}}
                                     </div>
                                 </form>
@@ -51,7 +51,7 @@
                                         {{> csrf_token}}
                                         <div class="form-group">
                                             <input type="hidden" id="jam_streamer_jam_number" name='{{{forms.form.setstreamer.jam_number}}}' value="{{{jam_number}}}" required>
-                                            <button type="submit" name='{{{forms.form.action}}}' value='{{{forms.action.setstreamer}}}' class="btn btn-default">Become Streamer</button>
+                                            <button type="submit" name='{{{forms.form.action}}}' value='{{{forms.action.setstreamer}}}' class="btn btn-default">Devenir Streamer</button>
                                         </div>
                                     </form>
                                 {{/user.twitch}}
@@ -98,11 +98,11 @@
             var s = Math.floor(totalS);
 
             let update_interval = 60000;
-            var timerString = "in ";
+            var timerString = "dans ";
             if (d > 0){
-                timerString += d+" day"+((d > 1) ? "s" : "")+((h > 0) ? (" "+h + " hour"+((h > 1) ? "s" : "")) : "");
+                timerString += d+" jour"+((d > 1) ? "s" : "")+((h > 0) ? (" "+h + " heure"+((h > 1) ? "s" : "")) : "");
             }else if (d == 0 && h > 0){
-                timerString += h+" hour"+((h > 1) ? "s" : "")+((m > 0) ? (" "+m + " minute"+((m > 1) ? "s" : "")) : "");
+                timerString += h+" heure"+((h > 1) ? "s" : "")+((m > 0) ? (" "+m + " minute"+((m > 1) ? "s" : "")) : "");
             }else if (d == 0 && h == 0 && m > 0){
                 update_interval = 500;
                 timerString += m+" min"+((s > 0) ? (" "+s + " s") : "");
