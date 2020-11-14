@@ -2,6 +2,9 @@ body{
     background-color: #202020;
     color: white;
 }
+* {
+    border: none !important;
+}
 .panel-body{
     background-color: #383838;
     border-color: #7B8991;
