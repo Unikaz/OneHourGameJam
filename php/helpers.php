@@ -63,14 +63,17 @@ function ordinal($number) {
 	StartTimer("ordinal");
 
 	$number = intval($number);
-    $ends = array('th','st','nd','rd','th','th','th','th','th','th');
-    if ((($number % 100) >= 11) && (($number%100) <= 13)){
+    if ($number == 1){
 		StopTimer("ordinal");
-		return $number. 'th';
+		return $number. 'er';
 	}
+    elseif ($number == 2){
+        StopTimer("ordinal");
+        return $number. 'd';
+    }
     else{
 		StopTimer("ordinal");
-		return $number. $ends[$number % 10];
+		return $number. 'e';
 	}
 	StopTimer("ordinal");
 }

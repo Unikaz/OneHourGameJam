@@ -1,24 +1,24 @@
-<h1 class="pageHeading">Log in</h1>
+<h1 class="pageHeading">Connexion</h1>
 <div class="pageDescription">
-	Log in with your username and password or <a href='?{{{forms.get.page}}}={{{forms.pages.register}}}'>register an account</a>.
+	Connectez-vous avec un pseudo et un mot de passe ou <a href='?{{{forms.get.page}}}={{{forms.pages.register}}}'>créez un compte</a>.
 </div>
 
 <form method='post'>
 	{{> csrf_token}}
 	<div class="form-group">
-		<label for="username">Username</label>
-		<input type="text" class="form-control" id="username" name='{{{forms.form.login.username}}}' placeholder="Username" minlength='{{{CONFIG.VALUES.MINIMUM_USERNAME_LENGTH}}}' maxlength='{{{CONFIG.VALUES.MAXIMUM_USERNAME_LENGTH}}}'>
+		<label for="username">Pseudo</label>
+		<input type="text" class="form-control" id="username" name='{{{forms.form.login.username}}}' placeholder="Pseudo" minlength='{{{CONFIG.VALUES.MINIMUM_USERNAME_LENGTH}}}' maxlength='{{{CONFIG.VALUES.MAXIMUM_USERNAME_LENGTH}}}'>
 	</div>
 	<div class="form-group">
-		<label for="password">Password</label>
-		<input type="password" class="form-control" id="password" name='{{{forms.form.login.password}}}' placeholder="Password" minlength='{{{CONFIG.VALUES.MINIMUM_PASSWORD_LENGTH}}}' maxlength='{{{CONFIG.VALUES.MAXIMUM_PASSWORD_LENGTH}}}'>
+		<label for="password">Mot de passe</label>
+		<input type="password" class="form-control" id="password" name='{{{forms.form.login.password}}}' placeholder="Mot de passe" minlength='{{{CONFIG.VALUES.MINIMUM_PASSWORD_LENGTH}}}' maxlength='{{{CONFIG.VALUES.MAXIMUM_PASSWORD_LENGTH}}}'>
 	</div>
 	{{> csrf_token}}
 	<div>
-		<button type="submit" name='{{{forms.form.action}}}' value='{{{forms.action.login}}}' class="btn btn-default">Log in</button>
-		<a class='loginLink' href='?{{{forms.get.page}}}={{{forms.pages.register}}}'>Don't have an account yet?</a>
+		<button type="submit" name='{{{forms.form.action}}}' value='{{{forms.action.login}}}' class="btn btn-default">Connexion</button>
+		<a class='loginLink' href='?{{{forms.get.page}}}={{{forms.pages.register}}}'>Vous n'avez pas encore de compte ?</a>
 	</div>
 	<div>
-		<a class='loginLink' href='?{{{forms.get.page}}}={{{forms.pages.forgotpassword}}}'>Forgot password?</a>
+		<a class='loginLink' href='?{{{forms.get.page}}}={{{forms.pages.forgotpassword}}}'>Mot de passe oublié ?</a>
 	</div>
 </form>

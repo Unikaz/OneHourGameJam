@@ -60,7 +60,7 @@
 								setTimeout(UpdateTimer, update_interval);
 							}
 							var year = date.getFullYear();
-							var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+							var months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
 							var month = months[date.getMonth()];
 							var day = date.getDate();
 							var hour = date.getHours();
@@ -98,7 +98,7 @@
 									timezone += n;
 								}
 							}
-							document.write("<b>"+day+" "+month+" "+year+" at "+hour+":"+min+"</b><br />("+timezone+")");
+							document.write("<b>"+day+" "+month+" "+year+" à "+hour+":"+min+"</b><br />("+timezone+")");
 
 							setTimeout(UpdateTimer, 0);
 						</script>

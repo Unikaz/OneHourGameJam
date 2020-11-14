@@ -55,8 +55,10 @@ class JamPresenter{
 
 		$jamViewModel->theme_visible = $jamModel->Theme; //Theme is visible to admins
 		$jamViewModel->jam_number_ordinal = ordinal(intval($jamModel->JamNumber));
-		$jamViewModel->date = date("F jS Y", strtotime($jamModel->StartTime));
-		$jamViewModel->time = date("H:i", strtotime($jamModel->StartTime));
+        $timestamp = strtotime($jamModel->StartTime);
+        $months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+        $jamViewModel->date = strftime("%d", $timestamp)." ".$months[date("n", $timestamp)-1]." ".strftime("%Y", $timestamp);
+		$jamViewModel->time = date("H:i", $timestamp);
 
 		//Jam Colors
 		$jamViewModel->colors = Array();
