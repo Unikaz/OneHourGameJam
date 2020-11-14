@@ -1,40 +1,40 @@
-<h1 class="pageHeading">{{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} suggestions and voting</h1>
+<h1 class="pageHeading">Propositions et votes du {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}</h1>
 <div class="pageDescription">
-	Use this form to submit or edit your {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} to {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}} {{page.submit_jam.jam_number}}.
+	Utilisez ce formulaire pour proposer ou éditer votre {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} pour la {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}} {{page.submit_jam.jam_number}}.
 </div>
 
-<h4>Suggest a {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}</h4>
+<h4>Proposer un {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}</h4>
 
 <p>
-    Each {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}} has a {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}, these are selected based on your suggestions. Once submitted, other users will cast their votes. You can suggest up to {{CONFIG.PRETTY_PRINT.THEMES_PER_USER}} {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} and can delete your suggested {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}.
+    Chaque {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}} a un {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}, celui-ci est choisi en fonciton des propositions. Une fois proposé, les autres utilisateurs peuvent voter. Vous pouvez proposer jusqu'à {{CONFIG.PRETTY_PRINT.THEMES_PER_USER}} {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} et supprimer vos {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} proposés.
 </p>
 <form method='post'>
     {{> csrf_token}}
 	<div class="form-group">
 		<label for="theme">{{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}</label>
 		<input type="text" class="form-control" id="theme" name='{{{forms.form.newtheme.theme}}}' placeholder="{{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}" value="" required>
-		<button type="submit" name='{{{forms.form.action}}}' value='{{{forms.action.savenewtheme}}}' class="btn btn-default">Suggest {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}</button>
+		<button type="submit" name='{{{forms.form.action}}}' value='{{{forms.action.savenewtheme}}}' class="btn btn-default">Proposer ce {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}</button>
 	</div>
 </form>
 
-<h4>{{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} Voting</h4>
+<h4>Vote du {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}</h4>
 
 <p>
-	Here you can vote on the {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} you would like to appear in {{CONFIG.VALUES.JAM_PHRASE_PLURAL}}. 
+	Ici vous pouvez voter pour les {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} que vous voudriez pour les prochaines {{CONFIG.VALUES.JAM_PHRASE_PLURAL}}.
 </p>
 <p>
-	{{CONFIG.VALUES.THEME_PHRASE_PLURAL}} suggested above will appear in this list. Once a {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} receives enough votes, it becomes considered for a {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}}, depending on its popularity. {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} which don't perform as well as others regularly get removed, the threshold for removal however depends on the popularity of the other suggested {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}. Old {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} are also removed to make way for new ones, irrespective of their popularity as the votes for them likely no longer represent the opinion of currently active participants. Any {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} that gets removed due to unpopularity or age can be suggested again at any point.
+	{{CONFIG.VALUES.THEME_PHRASE_PLURAL}} suggérés ci-dessus apparaitront dans la liste. Une fois qu'un {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} a reçu suffisamment de votes, il est considéré pour une {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}}, en fonction de sa popularité. Les {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} qui n'ont pas suffisamment de votes sont régulièrement retirés, en fonction de la popularité des autres {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}. Les anciens {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} pour donner une chance aux nouveaux, sans tenir compte des votes car ils ne représentent plus l'avis des participants actifs. N'importe quel {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} qui est retiré ainsi peu être proposé à nouveau.
 </p>
 
-<h4>Your {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}</h4>
+<h4>Vos {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}</h4>
 
 <p>
-    Here you can manage your suggested {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} and see their selection probability. Keep in mind that because of the number of {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}, the probability for any individual {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} will still tend to be low.
+    Ici vous pouvez gérer vos {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} et voir leur chance d'être sélectionné. Garder à l'esprit qu'en fonction du nombre de {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}, la probabilité pour un {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} reste faible.
 </p>
 
 {{#cookies.is_streamer}}
     <p class='bold'>
-        Please disable streamer mode to vote on {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} and manage your suggestions.
+        Merci de désactiver le mode Stream pour votez les {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} et gérer vos propositions.
     </p>
 {{/cookies.is_streamer}}
 {{^cookies.is_streamer}}
@@ -49,11 +49,11 @@
                 </th>
                 {{#CONFIG.VALUES.DISPLAY_THEME_PROBABILITY}}
                     <th class='themeTableCell themeTableCellCentered'>
-                        Likelihood
+                        Probabilité
                     </th>
                 {{/CONFIG.VALUES.DISPLAY_THEME_PROBABILITY}}
                 <th class='themeTableCell themeTableCellCentered themesIdeasColumn'>
-                    Ideas (only visible to you)
+                    Idées (seulement visible par vous)
                 </th>
             </tr>
             {{#themes.suggested_themes}}
@@ -85,10 +85,10 @@
                     </td>
                 {{/CONFIG.VALUES.DISPLAY_THEME_PROBABILITY}}
                 <th class='themeTableCell themeTableCellCentered'>
-                    <input type="text" class="form-control" name="{{{forms.form.submitideas.ideas}}}" id="ideas-{{theme_id}}" placeholder="Enter some {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} ideas (optional)" value='{{ideas}}' onchange='SubmitThemeIdeas({{theme_id}}, "ideas-{{theme_id}}");' maxlength="240">
+                    <input type="text" class="form-control" name="{{{forms.form.submitideas.ideas}}}" id="ideas-{{theme_id}}" placeholder="Entrez votre idée de {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} (optionnel)" value='{{ideas}}' onchange='SubmitThemeIdeas({{theme_id}}, "ideas-{{theme_id}}");' maxlength="240">
                 </th>
                 <td class='themeTableCell'>
-                    <form method='POST' class="themesActionButtons" onsubmit="return confirm('Are you sure you want to delete your {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} {{theme}}?');">
+                    <form method='POST' class="themesActionButtons" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer votre {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} {{theme}}?');">
                         {{> csrf_token}}
                         <button type="submit" name='{{{forms.form.action}}}' value='{{{forms.action.deletetheme}}}' class="btn btn-default"><img src="{{{page.template_path}}}images/cross.png" height="20" width="20"> &nbsp;Delete</button>
                         <input type='hidden' name='{{{forms.form.deletetheme.theme_id}}}' value='{{{theme_id}}}'>
@@ -103,11 +103,11 @@
         </table>
     {{/themes.has_own_themes}}
     {{^themes.has_own_themes}}
-        <p><b>You haven't suggested any {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}!</b></p>
+        <p><b>Vous n'avez proposé aucun {{CONFIG.VALUES.THEME_PHRASE_PLURAL}} !</b></p>
     {{/themes.has_own_themes}}
 {{/cookies.is_streamer}}
 
-<h4>Other {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}</h4>
+<h4>Autres {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}</h4>
 
 {{#themes.has_other_themes}}
     <table class='themesTable'>
@@ -119,7 +119,7 @@
                 {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}
             </th>
             <th class='themeTableCell themeTableCellCentered themesIdeasColumn'>
-                Ideas (only visible to you)
+                Idées (seulement visible par vous)
             </th>
         </tr>
         {{#themes.suggested_themes}}
@@ -166,7 +166,7 @@
                                     {{{theme}}}
                                 </td>
                                 <th class='themeTableCell themeTableCellCentered'>
-                                    <input type="text" class="form-control" name="{{{forms.form.submitideas.ideas}}}" id="ideas-{{theme_id}}" placeholder="Enter some {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} ideas (optional)" value='{{ideas}}' onchange='SubmitThemeIdeas({{theme_id}}, "ideas-{{theme_id}}");' maxlength="240">
+                                    <input type="text" class="form-control" name="{{{forms.form.submitideas.ideas}}}" id="ideas-{{theme_id}}" placeholder="Entrez vos idées de {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} (optionnel)" value='{{ideas}}' onchange='SubmitThemeIdeas({{theme_id}}, "ideas-{{theme_id}}");' maxlength="240">
                                 </th>
                             </tr>
                         {{/is_own_theme}}
@@ -177,7 +177,7 @@
     </table>
 {{/themes.has_other_themes}}
 {{^themes.has_other_themes}}
-    <p><b>Nobody has suggested other {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}.</b></p>
+    <p><b>Personne n'a proposé de {{CONFIG.VALUES.THEME_PHRASE_PLURAL}}.</b></p>
 {{/themes.has_other_themes}}
 
 <script type='text/javascript'>
