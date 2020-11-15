@@ -2,9 +2,29 @@ body{
     background-color: #202020;
     color: white;
 }
+* {
+    border: none !important;
+    border-radius: 3px !important;
+}
 .panel-body{
-    background-color: #383838;
+    background-color: #2f2f2f;
     border-color: #7B8991;
+}
+
+.header .panel-body{
+    background-color: #202020;
+}
+
+.header .left-side {
+    text-align: left;
+}
+
+.header .left-side .custom-brand-logo {
+    display: none;
+}
+
+.header .mainLogo {
+    margin-bottom: 15px;
 }
 
 .jamContent{
@@ -44,21 +64,23 @@ body{
 }
 
 a{
-    color: #76B2E5;
+    color: #b7a38b;
 }
 .a:visited{
-    color: #76B2E5;
+    color: #b7a38b;
 }
 
 .a:link{
-    color: #76B2E5;
+    color: #b7a38b;
 }
 
 a:hover{
-    color: #99CAF4;
+    color: #d2bea6;
+    text-decoration: none;
+    transition: color .2s ease;
 }
 .a:active{
-    color: #99CAF4;
+    color: #b7a38b;
 }
 
 .form-control{
@@ -77,7 +99,7 @@ a:hover{
 }
 
 .btn-default{
-    background-color: #606060;
+    background-color: #1f1f1f;
     color: white;
 }
 

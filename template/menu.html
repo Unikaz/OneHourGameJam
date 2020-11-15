@@ -107,13 +107,14 @@
 					{{/cookies.is_streamer}}
 				{{/twitch}}
 			{{/user}}
+			<!--
 			{{#cookies.darkmode}}
 				<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.dark_mode}}}=0'>Passer en light mode</a></li>
 			{{/cookies.darkmode}}
 			{{^cookies.darkmode}}
 				<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.dark_mode}}}=1'>Passer en dark mode</a></li>
 			{{/cookies.darkmode}}
-			
+			-->
 			{{#user.admin}}
 				{{^cookies.is_streamer}}
 					<li class="mainmenu-separator">Administration</li>

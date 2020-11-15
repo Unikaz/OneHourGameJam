@@ -2,11 +2,16 @@
 	<div class="col-md-12 alignCenter header">
 		<div class="panel panel-info">
 			<div class="panel-body">
-				<div class="col-md-3 hidden-xs hidden-sm alignCenter headerColumn">
-					<a href='.'><img src='{{#CONFIG.has_custom_brand_logo}}{{{CONFIG.VALUES.OVERRIDE_BRAND_LOGO}}}{{/CONFIG.has_custom_brand_logo}}{{^CONFIG.has_custom_brand_logo}}{{{page.template_path}}}/images/logos/logo_hourglass.svg{{/CONFIG.has_custom_brand_logo}}' alt='Logo' class='brandLogo' /></a>
+				<div class="col-md-3 hidden-xs hidden-sm alignCenter headerColumn left-side">
+					{{#CONFIG.VALUES.DISCORD_INVITE_URL}}
+						<a href="{{{CONFIG.VALUES.DISCORD_INVITE_URL}}}" class='discordButtonLink' target='_blank'>
+							<div class='mediaButton discordButton' class='discordButton'><img src='{{{page.template_path}}}images/discord.png' class='discordButtonImage' /> Discord</div>
+						</a>
+					{{/CONFIG.VALUES.DISCORD_INVITE_URL}}
+					<a href='.' class="custom-brand-logo"><img src='{{#CONFIG.has_custom_brand_logo}}{{{CONFIG.VALUES.OVERRIDE_BRAND_LOGO}}}{{/CONFIG.has_custom_brand_logo}}{{^CONFIG.has_custom_brand_logo}}{{{page.template_path}}}/images/logos/logo_hourglass.svg{{/CONFIG.has_custom_brand_logo}}' alt='Logo' class='brandLogo' /></a>
 				</div>
 				<div class="col-md-6 alignCenter headerColumn">
-					<a href='.'><img src='{{#CONFIG.has_custom_main_logo}}{{{CONFIG.VALUES.OVERRIDE_MAIN_LOGO}}}{{/CONFIG.has_custom_main_logo}}{{^CONFIG.has_custom_main_logo}}{{{page.template_path}}}images/logos/logo_onehourgamejam.png{{/CONFIG.has_custom_main_logo}}' alt='Logo' class='mainLogo' /></a><br />
+					<a href='.'><img src='{{#CONFIG.has_custom_main_logo}}{{{CONFIG.VALUES.OVERRIDE_MAIN_LOGO}}}{{/CONFIG.has_custom_main_logo}}{{^CONFIG.has_custom_main_logo}}{{{page.template_path}}}images/logos/jam-de-la-loose-logo.svg{{/CONFIG.has_custom_main_logo}}' alt='Logo' class='mainLogo' /></a><br />
 					{{{CONFIG.VALUES.JAMDESC}}}<br />
 					{{#CONFIG.VALUES.IRC_ADDRESS}}
 					{{#CONFIG.VALUES.IRC_CHANNEL}}
@@ -16,11 +21,7 @@
 					{{/CONFIG.VALUES.IRC_CHANNEL}}
 					{{/CONFIG.VALUES.IRC_ADDRESS}}
 
-					{{#CONFIG.VALUES.DISCORD_INVITE_URL}}
-						<a href="{{{CONFIG.VALUES.DISCORD_INVITE_URL}}}" class='discordButtonLink' target='_blank'>
-							<div class='mediaButton discordButton' class='discordButton'><img src='{{{page.template_path}}}images/discord.png' class='discordButtonImage' /> Discord</div>
-						</a>
-					{{/CONFIG.VALUES.DISCORD_INVITE_URL}}
+					
 				</div>
 				<div class="col-md-3 alignCenter headerColumn headerTimer">
 					<p>
