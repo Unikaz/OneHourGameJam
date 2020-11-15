@@ -1,6 +1,6 @@
-<h1 class="pageHeading">Submit your {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}</h1>
+<h1 class="pageHeading">Publier votre {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}</h1>
 <div class="pageDescription">
-	Use this form to submit or edit your {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} to {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}} {{page.submit_jam.jam_number}}.
+	Utilisez ce formulaire pour publier ou éditer votre {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} pour la {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}} {{page.submit_jam.jam_number}}.
 </div>
 
 <div class="panel panel-info">
@@ -16,23 +16,23 @@
 		<div class="panel panel-info">
 			<div class='panel-heading'>
 				<h3 class='panel-title submitEntryHeading'>
-					{{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} Info
+					Info sur le {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}
 				</h3>
 			</div>
 			<div class="panel-body">
 				<div class="form-group">
-					<label for="gamename">{{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} title</label>
-					<input type="text" class="form-control" id="gamename" name='{{{forms.form.submit.name}}}' placeholder="{{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} name" value="{{page.user_entry_name}}" required>
+					<label for="gamename">Titre du {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}</label>
+					<input type="text" class="form-control" id="gamename" name='{{{forms.form.submit.name}}}' placeholder="Nom du {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}" value="{{page.user_entry_name}}" required>
 				</div>
 
 				<div class="form-group">
-					<label for="screenshotfile">Screenshot / Icon (Change)</label>
-					<br />Square icons work best. Supported formats: png, jpg, gif (up to {{CONFIG.PRETTY_PRINT.MAX_SCREENSHOT_FILE_SIZE_IN_BYTES}})
-					<input type="file" class="form-control" id="screenshotfile" name='{{{forms.form.submit.screenshot}}}' placeholder="Screenshot file" value="{{page.user_entry_screenshot}}">
+					<label for="screenshotfile">Screenshot / Icône</label>
+					<br />Les icônes carrés sont mieux. Formats supportés : png, jpg, gif (jusqu'à {{CONFIG.PRETTY_PRINT.MAX_SCREENSHOT_FILE_SIZE_IN_BYTES}})
+					<input type="file" class="form-control" id="screenshotfile" name='{{{forms.form.submit.screenshot}}}' placeholder="Icône" value="{{page.user_entry_screenshot}}">
 				</div>
 				<div class="form-group">
-					<label for="description">Brief {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} description</label>
-					<textarea class="form-control" id="description" name='{{{forms.form.submit.description}}}' placeholder="{{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} description">{{page.user_entry_desc}}</textarea>
+					<label for="description">Brève description du {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}</label>
+					<textarea class="form-control" id="description" name='{{{forms.form.submit.description}}}' placeholder="Description du {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}">{{page.user_entry_desc}}</textarea>
 				</div>
 			</div>
 		</div>
@@ -40,7 +40,7 @@
 		<div class="panel panel-info">
 			<div class='panel-heading'>
 				<h3 class='panel-title submitEntryHeading'>
-					Link to {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}
+					Lien vers le {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -54,21 +54,21 @@
 					<div class="panel-body">
 						<div class="tab-content">
 							<div id="platformInfo" class="tab-pane fade in active">
-								<p>You need to host the {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} files yourself. If you don't have a website, you might want to consider hosting files on a service like Dropbox or Google Drive, or as a release if you're using Github.</p>
+								<p>Vous devez héberger les fichiers du {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} vous-même. Si vous n'avez pas de site web, vous pouvez utiliser un service comme Dropbox ou Google Drive, ou comme une 'release' si vous utilisez Github.</p>
 
-								<p>Add<b> at least one build.</b> You can add source code too, however a build is required.</p>
+								<p>Ajoutez<b> au moins une build.</b> Vous pouvez aussi ajouter les sources, mais une build est requise.</p>
 
-								<p>To remove a platform, leave the URL for that platform blank and submit.</p>
+								<p>Pour retirer une plateforme, laissez l'URL pour cette plateforme vide et validez</p>
 
-								<p>If your {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} supports <b>multiple platforms</b>, insert the URL in fields for all supported platforms.</p>
+								<p>Si votre {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} supporte <b>plusieurs plateformes</b>, mettez l'URL dans le champ de toutes les plateformes supportées.</p>
 							</div>
 							{{#page.platforms}}
 								<div id="platform{{platform_id}}" class="tab-pane fade">
 									<p>
-										Add the URL to where the player can play your {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} for the {{platform_name}} platform.
+										Ajoutez l'URL où le joueur peut jouer votre {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}} pour la plateforme {{platform_name}}.
 									</p>
 									<p>
-										<label for="gameurl{{platform_id}}">URL to {{platform_name}} build</label>
+										<label for="gameurl{{platform_id}}">URL de la build pour {{platform_name}}</label>
 										<input type="url" class="form-control" id="gameurl{{platform_id}}" name='{{{forms.form.submit.url}}}{{platform_id}}' placeholder="http://game-url" value="{{platform_entry_url}}">
 									</p>
 								</div>
@@ -82,7 +82,7 @@
 		<div class="panel panel-info">
 			<div class='panel-heading'>
 				<h3 class='panel-title submitEntryHeading'>
-					Customize
+					Personnalisation
 				</h3>
 			</div>
 			<div class="panel-body">
@@ -103,20 +103,20 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="form-group">
-							<label for="backgroundColor">Background Colour</label>
-							<input type="color" class="form-control" id="backgroundColor" name='{{{forms.form.submit.background_color}}}' placeholder="Colour" value="#{{page.user_entry_background_color}}" oninput="$('#colorPreview').css('background-color', this.value);" required>
+							<label for="backgroundColor">Couleur du fond</label>
+							<input type="color" class="form-control" id="backgroundColor" name='{{{forms.form.submit.background_color}}}' placeholder="Couleur" value="#{{page.user_entry_background_color}}" oninput="$('#colorPreview').css('background-color', this.value);" required>
 						</div>
 					</div>
 					<div class="col-md-3">
 						<div class="form-group">
-							<label for="textColor">Text Colour</label>
-							<input type="color" class="form-control" id="textColor" name='{{{forms.form.submit.text_color}}}' placeholder="Colour" value="#{{page.user_entry_text_color}}" oninput="$('#colorPreview').css('color', this.value);" required>
+							<label for="textColor">Couleur du texte</label>
+							<input type="color" class="form-control" id="textColor" name='{{{forms.form.submit.text_color}}}' placeholder="Couleur" value="#{{page.user_entry_text_color}}" oninput="$('#colorPreview').css('color', this.value);" required>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div id='colorPreview' class="submitColorPreview" style='background-color: #{{page.user_entry_background_color}}; color: #{{page.user_entry_text_color}}'>
-							<b><span class='entryTileTitleText'>Preview</span></b><br />
-							by <span class='entryAuthor'>Preview</span>
+							<b><span class='entryTileTitleText'>Aperçu</span></b><br />
+							by <span class='entryAuthor'>Aperçu</span>
 						</div>
 					</div>
 				</div>
@@ -132,8 +132,8 @@
 			<div class="panel-body">
 				<div class="form-group">
 					<input type="hidden" id="satisfaction" name='{{{forms.form.submit.satisfaction}}}' value="0">
-					<p>Please rate your experience: (Optional)
-						<div onclick='SetSatisfaction("no");' class="btn btn-default">No rating</div>
+					<p>Merci de noter votre expérience : (Optionnel)
+						<div onclick='SetSatisfaction("no");' class="btn btn-default">Pas de note</div>
 					</p>
 					<img id='satisfaction_star_-5' src='{{{page.template_path}}}images/star_red_outline.png' onclick='SetSatisfaction(-5);'>
 					<img id='satisfaction_star_-4' src='{{{page.template_path}}}images/star_red_outline.png' onclick='SetSatisfaction(-4);'>
@@ -153,7 +153,7 @@
 		{{/page.user_submitted_to_this_jam}}
 
 		<input type="hidden" name="{{{forms.form.submit.jam_number}}}" value="{{page.submit_jam.jam_number}}" />
-			<button type="submit" name='{{{forms.form.action}}}' value='{{{forms.action.submit}}}' class="btn btn-default">Submit</button>
+			<button type="submit" name='{{{forms.form.action}}}' value='{{{forms.action.submit}}}' class="btn btn-default">Publier</button>
 	</form>
 </div>
 
