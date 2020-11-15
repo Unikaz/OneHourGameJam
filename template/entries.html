@@ -1,16 +1,16 @@
 <h1 class="pageHeading">{{CONFIG.VALUES.GAME_PHRASE_PLURAL}}</h1>
 <div class="pageDescription">
-	This list contains all {{CONFIG.VALUES.GAME_PHRASE_PLURAL}} which have been submitted. The table is sortable by clicking a column header.
+	Cette liste contient tous les {{CONFIG.VALUES.GAME_PHRASE_PLURAL}} qui ont été publié. Le tableau peut-être trié en cliquant sur les en-têtes.
 </div>
 
-<input type="text" class="form-control searchInputField" id='js-entrysearch' placeholder="Search by Title, {{CONFIG.VALUES.DEVELOPER_PHRASE_SINGULAR}}, {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}} Number or {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}..." onkeyup="FilterEntryTable()">
+<input type="text" class="form-control searchInputField" id='js-entrysearch' placeholder="Recherche par Titre, {{CONFIG.VALUES.DEVELOPER_PHRASE_SINGULAR}}, Numéro de {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}} ou {{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}..." onkeyup="FilterEntryTable()">
 
 <div class='panel-body table-responsive'>
-	Click on a column header to sort.
+	Cliquez sur l'en-tête pour trier.
 	<table id='js-entrytable' class="table sortable dataTable">
 		<thead>
 			<tr class='sortableHeader dataTableHeaderRow'>
-				<th>Title</th>
+				<th>Titre</th>
 				<th>{{CONFIG.VALUES.DEVELOPER_PHRASE_SINGULAR}}</th>
 				<th>{{CONFIG.VALUES.JAM_PHRASE_SINGULAR}}</th>
 				<th>{{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}</th>

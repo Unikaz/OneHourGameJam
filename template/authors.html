@@ -1,20 +1,20 @@
 <h1 class="pageHeading">{{CONFIG.VALUES.DEVELOPER_PHRASE_PLURAL}}</h1>
 <div class="pageDescription">
-	This list contains all {{CONFIG.VALUES.DEVELOPER_PHRASE_PLURAL}} who have participated in a {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}}. The table is sortable by clicking a column header.
+	Cette liste contient tous les {{CONFIG.VALUES.DEVELOPER_PHRASE_PLURAL}} qui ont participé à une {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}}. Le tableau peut-être trié en cliquant sur les en-têtes.
 </div>
 
 <input type="text" class="form-control searchInputField" id='js-authorsearch' placeholder="Recherche par pseudo ou compte twitter..." onkeyup="FilterAuthorTable()">
 
 <div class='panel-body table-responsive'>
-	Click on a column header to sort.
+  Cliquez sur l'en-tête pour trier.
 	<table id='js-authortable' class="table sortable dataTable">
 		<thead>
 			<tr class='sortableHeader dataTableHeaderRow'>
 				<th>{{CONFIG.VALUES.DEVELOPER_PHRASE_SINGULAR}}</th>
 				<th>Twitter</th>
 				<th>{{CONFIG.VALUES.GAME_PHRASE_PLURAL}}</th>
-				<th>First {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}}</th>
-				<th>Last {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}}</th>
+				<th>Première {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}}</th>
+				<th>Dernière {{CONFIG.VALUES.JAM_PHRASE_SINGULAR}}</th>
 			</tr>
 		</thead>
 		<tbody>

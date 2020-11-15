@@ -32,9 +32,9 @@
 					{{^user.preferences.DISABLE_THEMES_NOTIFICATION}}
 						<div class="panel-body notification notification-minor">
 							<a href='?{{{forms.get.page}}}={{{forms.pages.themes}}}'>{{{themes.themes_user_has_not_voted_for}}}
-								{{^themes.themes_user_has_not_voted_for_plural}}{{CONFIG.VALUES.THEME_PHRASE_SINGULAR}}{{/themes.themes_user_has_not_voted_for_plural}}
-								{{#themes.themes_user_has_not_voted_for_plural}}{{CONFIG.VALUES.THEME_PHRASE_PLURAL}}{{/themes.themes_user_has_not_voted_for_plural}}
-								need{{^themes.themes_user_has_not_voted_for_plural}}s{{/themes.themes_user_has_not_voted_for_plural}} your vote</a>
+								{{^themes.themes_user_has_not_voted_for_plural}}{{CONFIG.VALUES.THEME_PHRASE_SINGULAR}} attend votre {{/themes.themes_user_has_not_voted_for_plural}}
+								{{#themes.themes_user_has_not_voted_for_plural}}{{CONFIG.VALUES.THEME_PHRASE_PLURAL}} attendent vos {{/themes.themes_user_has_not_voted_for_plural}}
+								vote{{#themes.themes_user_has_not_voted_for_plural}}s{{/themes.themes_user_has_not_voted_for_plural}}</a>
 						</div>
 					{{/user.preferences.DISABLE_THEMES_NOTIFICATION}}
 				{{/themes.user_has_not_voted_for_all_themes}}
@@ -63,8 +63,8 @@
 				{{#jams.current_jam}}
 					{{^cookies.is_streamer}}
 						<li><b><a href='?{{{forms.get.page}}}={{{forms.pages.submit}}}'>
-							{{^user_participated_in_jam}}Submit {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}{{/user_participated_in_jam}}
-							{{#user_participated_in_jam}}Edit {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}{{/user_participated_in_jam}}
+							{{^user_participated_in_jam}}Publier votre {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}{{/user_participated_in_jam}}
+							{{#user_participated_in_jam}}Editer votre {{CONFIG.VALUES.GAME_PHRASE_SINGULAR}}{{/user_participated_in_jam}}
 						</a></b></li>
 					{{/cookies.is_streamer}}
 				{{/jams.current_jam}}
@@ -96,7 +96,7 @@
 			{{/user}}
 
 			<li class="mainmenu-separator">Autre</li>
-			<li><a href='https://github.com/OneHourGameJam/OneHourGameJam/issues' target='_BLANK'>Reporter un bug</a></li>
+			<li><a href='https://github.com/Unikaz/JamDeLaLoose/issues' target='_BLANK'>Reporter un bug</a></li>
 			{{#user}}
 				{{#cookies.is_streamer}}
 					<li><a href='?{{{forms.get.page}}}={{{forms.pages.main}}}&{{{forms.get.streaming_mode}}}=0'>Désactiver le mode Streamer</a></li>

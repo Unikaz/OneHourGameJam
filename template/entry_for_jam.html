@@ -7,7 +7,7 @@
                     <div class="entryTileTitle" style='background-color: rgba({{color256_background_red}}, {{color256_background_green}}, {{color256_background_blue}}, 0.9);'>
                         <!-- Why is centering things such a collossal pain in CSS :s -->
                         <b><span class='entryTileTitleText'>{{title}}</span></b><br />
-                        for <span class='entryAuthor'>{{CONFIG.VALUES.JAM_PHRASE_SINGULAR}} {{jam_number}}<br />
+                        pour <span class='entryAuthor'>{{CONFIG.VALUES.JAM_PHRASE_SINGULAR}} {{jam_number}}<br />
                         ({{jam_theme}})</span>
                     </div>
                 </div>
@@ -16,7 +16,7 @@
     </div>
     <div class='panel-body entryScreenshot description hiddenFace alignCenter entryTileDescriptionPanel' style='border: solid 1px {{color_border}}; background-color: {{color_lighter}}'>
         <div>
-            <b>Play</b><br />
+            <b>Jouer</b><br />
             {{#platforms}}
                 {{#url}}
                     <a href='#' class='btn entryButton' style='background-color: {{color_background}}' onclick='window.open("{{url}}", "_blank");'><img src='{{{page.template_path}}}{{{platform_icon_url}}}' class='entryPlayIcon' title='{{platform_name}}'></a>
@@ -29,7 +29,7 @@
         </div>
         <button type="button" class="btn entryButton" style='background-color: {{color_background}}' onclick='document.location.href = "?{{{forms.get.page}}}={{{forms.pages.jam}}}&{{{forms.get.jam.number}}}={{{jam_number}}}";'>{{CONFIG.VALUES.JAM_PHRASE_SINGULAR}} {{jam_number}}</button>
         {{#page.show_edit_link}}
-            <button type="button" class="btn entryButton" style='background-color: {{color_background}}' onclick='document.location.href = "?{{{forms.get.page}}}={{{forms.pages.submit}}}&{{{forms.get.submit.jam_number}}}={{{jam_number}}}";'>Edit</button>
+            <button type="button" class="btn entryButton" style='background-color: {{color_background}}' onclick='document.location.href = "?{{{forms.get.page}}}={{{forms.pages.submit}}}&{{{forms.get.submit.jam_number}}}={{{jam_number}}}";'>Éditer</button>
         {{/page.show_edit_link}}
     </div>
 </div>
